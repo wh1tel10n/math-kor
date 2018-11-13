@@ -9,12 +9,6 @@ def 최대공약수(a, b):
     >>> 최대공약수(1.3, 19)
     Traceback (most recent call last):
         ...
-    AssertionError: params should be an integer
+    ValueError: params should be an integer
     """
-    assert type(a) is IntType, "params should be an integer"
-    assert type(b) is IntType, "params should be an integer"
-    if a < b:
-        (a, b) = (b, a)
-    while b != 0:
-        (a, b) = (b, a % b)
-    return a
+    return 0

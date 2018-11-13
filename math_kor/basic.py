@@ -6,5 +6,5 @@ def 더하기(a,b):
     >>> 더하기(1,2)
     3
     """
-    return a+b
+    return 0
 

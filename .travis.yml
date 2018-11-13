@@ -1,0 +1,19 @@
+language: python
+python:
+  - "3.3"
+  - "3.4"
+  - "3.5"
+  - "3.6"
+
+script:
+  - python -m unittest discover tests -p test*.py
+
+deploy:
+  - provider: pypi
+    user: "test-account"
+    server: https://test.pypi.org/legacy/
+    password:
+      secure: f28RGOQF6nRci/BIiWU0qJvu9y52GK1iRaEEzeI8zHTzT6Q9ScxFpW+IqMIWFWKBp1BqbAEFCXUqeCvZhx7+p+YOSbO8FOUSOG1mpE+Y2wgnFmiXmTE8G58nlYAoYcA3AESWq0g9zIe1cvqISX37WfYYjJYKQjEc5ADegp2h2Gj9sVTqyZIa7P8RlAJOkLzL+WKDjx/ygi9mg8kW0iT5FIx7+cC4Nomc3ubys/gKE9vn8eykJtZsc3OR5uwUS2E9EEr41dYcgRqLiEWRNtR+agMrPof8H5e/wpFC8+2Hqyn4k5h2Q1R8vlWYoXYOd9mXdiPFDVMDzEbkInUe+2C8zYqRiTpVLKGNSChGilMm1MFTK8UeTlY0FkZHzMeFKPABanxjBygcEazhHP5BLWKOhyuHNJ0hdHgN6nQUL48GOOdT2qBNYs6bvGaWxNHOn6jOMmW1FP+A/MYgH4GlSvrXmL5MNFky+WvU3/UqP/3NY9OJZedKj+jkRZYzsrDEjrKZuLkRZJ4s91cWRGcgZELT+MIHjryKQvmWfcwYekvFe2RYvH+j2oC5vfo5XLYX1LLOwmiP7y+NzJo0e1RHH2HhJv7VEFoV0il45/K6efHk/ts8qbZD8cirNHrUDxAU4zPpeqH8YauzwuhTiJm8sOA2t3JKeMsi/HMT+I//IZsDLwg=
+    distributions: "sdist bdist_wheel"
+    on:
+      tags: true

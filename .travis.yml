@@ -1,12 +1,19 @@
 language: python
+
 python:
-  - "3.3"
   - "3.4"
   - "3.5"
   - "3.6"
 
+install:
+  - pip install -r requirements
+
 script:
-  - python -m unittest discover tests -p test*.py
+  - pytest
+
+before_deploy:
+  - wget -O - https://bootstrap.pypa.io/get-pip.py | python - --no-setuptools --no-wheel && pip install --upgrade setuptools twine wheel
+  - python3 setup.py sdist bdist_wheel
 
 deploy:
   - provider: pypi

@@ -8,3 +8,9 @@ def 더하기(a,b):
     """
     return 0
 
+def 빼기(a,b):
+    """Returns the sum of a and b
+    >>> 빼기(3,2)
+    1
+    """
+    return a - b
